@@ -1,0 +1,83 @@
+/* Menu Utilizando Flex Box */
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; 
+    background-color: #455a64;
+    height: 15%;
+     position: fixed; 
+}
+
+.menu {
+    display: flex;
+    flex-grow: 10; 
+    flex-wrap: wrap; 
+}
+
+.menu ul {
+    
+    display: flex;
+}
+
+.menu li {
+     display: flex;   
+}
+
+.menu a {
+    text-decoration: none;
+    color: black;
+    padding: 15px;
+    font-family: system-ui,
+    -apple-system, Helvetica, Arial, sans-serif;
+    
+}
+
+.menu a:hover {
+    background-color: #ff9800;
+    transition: .5s;
+    color: white;
+    border-radius: 30px;
+}
+
+/* menu hamburguer e rersponsividade com media query */
+
+.checkbtn {
+	font-size: 30px;
+	color: #ff9800;
+	float: right;
+	line-height: 80px;
+	margin-right: 40px;
+	cursor: pointer;
+    display: none;
+	
+}
+#check {
+	display: none;
+}
+
+@media (max-width: 999px) {
+    .menu { 
+        position: absolute;
+        top: 8vh;
+        right: -100%;
+        width: 50vw;
+        height: 92vh;
+         background: #455a64;
+        flex-direction: column;  
+        justify-content: space-around;
+        transition: all .5s;
+  } 
+    .checkbtn {
+        display: block;
+}
+
+  
+  .menu li {
+      margin-left: 0;
+     
+  }
+
+  #check:checked ~ .menu {
+      right: 0;
+  }
+}
